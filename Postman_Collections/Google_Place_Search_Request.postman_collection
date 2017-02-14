@@ -1,0 +1,72 @@
+{
+	"id": "ac0fd1ba-d486-95c2-134f-8334d06a55eb",
+	"name": "Place Search Request",
+	"description": "HTTP URL Form of Nearby Search request;\n\nhttps://maps.googleapis.com/maps/api/place/nearbysearch/output?parameters\n\nRequired parameters\nkey\nlocation\nradius\n\nOptional parameter used in this suit\nlanguage\ntype\n\n\n\n",
+	"order": [
+		"0a9048e3-f0f9-4b37-36d8-0e384b97cf8d",
+		"7e1f0ca3-527f-32e8-8f03-5d12bc85c4b7",
+		"8a852eb7-1e57-32f9-c4d2-76ff0327720e"
+	],
+	"folders": [],
+	"timestamp": 1487005546015,
+	"owner": "1531625",
+	"public": false,
+	"requests": [
+		{
+			"id": "0a9048e3-f0f9-4b37-36d8-0e384b97cf8d",
+			"headers": "",
+			"url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.898578,%2032.776217&radius=5000&type=restaurant&language=tr&key=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"Name is Çadır Kebap\"] = responseBody.has(\"Çadır Kebap\");\n\ntests[\"Cadir Kebap is not available\"] = !(responseBody.has(\"Cadir Kebap\"));\n\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487007563917,
+			"name": "GET Request \"language\" value is Turkish",
+			"description": "Place Search Request has to contain URL parameters listed below;\r\nlocation=latitude,longitude\r\nradius=integer (meter)\r\nkey=YOUR_API_KEY\r\n\r\nTEST CASE\r\nPRECONDITION\r\nlocation=39.898578,32.776217\r\nradius=5000\r\nkey=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0\r\nlanguage=tr\r\ntype=restaurant\r\n\r\nSTEPS\r\nSelect Request Method as \"GET\"\r\nEnter the valid location\r\nEnter the valid radius\r\nEnter the valid key\r\nEnter the valid language\r\nEnter the valid type\r\nClick SEND\r\n\r\nSend Request\r\nCheck \"name\" : \"Çadır Kebap\"\r\nCheck \"name\" : \"Cadir Kebap\"\r\n\r\n\r\nEXPECTED RESULTS\r\n\"name\" : \"Çadır Kebap\" is available\r\n\"name\" : \"Cadir Kebap\" is not available",
+			"collectionId": "ac0fd1ba-d486-95c2-134f-8334d06a55eb",
+			"responses": []
+		},
+		{
+			"id": "7e1f0ca3-527f-32e8-8f03-5d12bc85c4b7",
+			"headers": "",
+			"url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=39.898578,%2032.776217&radius=5000&type=restaurant&language=en&key=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "ac0fd1ba-d486-95c2-134f-8334d06a55eb",
+			"data": null,
+			"dataMode": "params",
+			"name": "GET Request \"language\" value is English",
+			"description": "Place Search Request has to contain URL parameters listed below;\r\nlocation=latitude,longitude\r\nradius=integer (meter)\r\nkey=YOUR_API_KEY\r\n\r\nTEST CASE\r\nPRECONDITION\r\nlocation=39.898578,32.776217\r\nradius=5000\r\nkey=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0\r\nlanguage=en\r\ntype=restaurant\r\n\r\nSTEPS\r\nSelect Request Method as \"GET\"\r\nEnter the valid location\r\nEnter the valid radius\r\nEnter the valid key\r\nEnter the valid language\r\nEnter the valid type\r\nClick SEND\r\nCheck \"name\" : \"Cadir Kebap\"\r\nCheck \"name\" : \"Çadır Kebap\"\r\n\r\n\r\nEXPECTED RESULTS\r\n\"name\" : \"Cadir Kebap\" is available\r\n\"name\" : \"Çadır Kebap\" is not available",
+			"descriptionFormat": "html",
+			"time": 1487007719913,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Name is Cadir Kebap\"] = responseBody.has(\"Cadir Kebap\");\n\ntests[\"Çadır Kebap is not available\"] = !(responseBody.has(\"Çadır Kebap\"));",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "8a852eb7-1e57-32f9-c4d2-76ff0327720e",
+			"headers": "",
+			"url": "https://maps.googleapis.com/maps/api/place/nearbysearch/json?type=restaurant&location=39.898578,32.776217&radius=50001&language=en&key=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"tests": "tests[\"status: INVALID_REQUEST \"] = responseBody.has(\"INVALID_REQUEST\");\ntests[\"error_message: The maximum allowed radius is 50 000 meters.\"] = responseBody.has(\"The maximum allowed radius is 50 000 meters.\");",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1487008968540,
+			"name": "GET Request \"radius\" value is greater than 50000",
+			"description": "Place Search Request has to contain URL parameters listed below;\r\nlocation=latitude,longitude\r\nradius=integer (meter) \r\nkey=YOUR_API_KEY\r\n\r\nMaximum 50000 is allowed for radius parameter.\r\n(https://developers.google.com/places/web-service/search) \r\n\r\nTEST CASE\r\nPRECONDITION\r\nlocation=39.898578,32.776217\r\nradius=50001\r\nkey=AIzaSyDL8LEcWxDowTzoquEi58RKTBRAGSIKtD0\r\nlanguage=en\r\ntype=restaurant\r\n\r\nSTEPS\r\nSelect Request Method as \"GET\"\r\nEnter the valid location\r\nEnter the valid radius\r\nEnter the valid key\r\nEnter the valid language\r\nEnter the valid type\r\nClick SEND\r\nCheck \"status” in response body\r\nCheck \"error_message\" in response body\r\n\r\n\r\nEXPECTED RESULTS\r\ni.e \"status\": \"INVALID_REQUEST\"\r\ni.e. \"error_message\": \"The maximum allowed radius is 50 000 meters.\"",
+			"collectionId": "ac0fd1ba-d486-95c2-134f-8334d06a55eb",
+			"responses": []
+		}
+	]
+}
