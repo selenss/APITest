@@ -1,0 +1,102 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Add",
+		"_postman_id": "cbf776f5-e4f3-fd0a-7743-47e769703542",
+		"description": "This is Place Add",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"added_place_id\", jsonData.place_id);",
+							"",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub_add}}/json?key={{api}}",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"location\": {\r\n    \"lat\": -33.8669710,\r\n    \"lng\": 151.1958750\r\n  },\r\n  \"accuracy\": 50,\r\n  \"name\": \"Google Shoes!\",\r\n  \"phone_number\": \"(02) 9374 4000\",\r\n  \"address\": \"48 Pirrama Road, Pyrmont, NSW 2009, Australia\",\r\n  \"types\": [\"shoe_store\"],\r\n  \"website\": \"http://www.google.com.au/\",\r\n  \"language\": \"en-AU\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Your test name\"] = jsonData.status === \"OK\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub_delete}}/json?key={{api}}",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"place_id\": \"{{added_place_id}}\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Already Deleted Place",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status in response body is NOT_FOUND\"] = responseBody.has(\"NOT_FOUND\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub_delete}}/json?key={{api}}",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"place_id\": \"{{added_place_id}}\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

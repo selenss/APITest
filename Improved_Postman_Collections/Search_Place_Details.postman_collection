@@ -1,0 +1,34 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Search",
+		"_postman_id": "0fd3abc1-12ee-8b47-e194-fe2f55265659",
+		"description": "This is place search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Radius greater than 50000",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"status: INVALID_REQUEST \"] = responseBody.has(\"INVALID_REQUEST\");",
+							"tests[\"error_message: The maximum allowed radius is 50 000 meters.\"] = responseBody.has(\"The maximum allowed radius is 50 000 meters.\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub}}/json?location={{location}}&radius={{radius}}&type={{type}}&key={{api}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

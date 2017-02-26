@@ -1,0 +1,270 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Details",
+		"_postman_id": "1040e566-9376-58c4-069f-8175a88b2c65",
+		"description": "Google Place Details",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Valid API Key - Get Place Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"id value is 4f89212bf76dde31f092cfc14d7506555d85b5c7\"] = responseBody.has(\"4f89212bf76dde31f092cfc14d7506555d85b5c7\");",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Place id is ChIJN1t_tDeuEmsRUsoyG83frY4\"] = jsonData.result.place_id ===\"ChIJN1t_tDeuEmsRUsoyG83frY4\";",
+							"",
+							"",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub}}/json?placeid={{placeid}}&key={{api}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "8211d805-7205-4b53-a852-70aa4f3bd461",
+					"name": "Sdyney",
+					"originalRequest": {
+						"url": "{{url}}/{{sub}}/json?placeid={{placeid}}&key={{api}}",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Alt-Svc",
+							"value": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+							"name": "Alt-Svc",
+							"description": "Custom header"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=300",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"name": "Content-Encoding",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"key": "Content-Length",
+							"value": "5701",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Feb 2017 10:45:09 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 25 Feb 2017 10:50:09 GMT",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Server",
+							"value": "pablo",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 273,
+					"body": "{\n   \"html_attributions\" : [],\n   \"result\" : {\n      \"address_components\" : [\n         {\n            \"long_name\" : \"5\",\n            \"short_name\" : \"5\",\n            \"types\" : [ \"floor\" ]\n         },\n         {\n            \"long_name\" : \"48\",\n            \"short_name\" : \"48\",\n            \"types\" : [ \"street_number\" ]\n         },\n         {\n            \"long_name\" : \"Pirrama Road\",\n            \"short_name\" : \"Pirrama Rd\",\n            \"types\" : [ \"route\" ]\n         },\n         {\n            \"long_name\" : \"Pyrmont\",\n            \"short_name\" : \"Pyrmont\",\n            \"types\" : [ \"locality\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"Council of the City of Sydney\",\n            \"short_name\" : \"Sydney\",\n            \"types\" : [ \"administrative_area_level_2\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"New South Wales\",\n            \"short_name\" : \"NSW\",\n            \"types\" : [ \"administrative_area_level_1\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"Australia\",\n            \"short_name\" : \"AU\",\n            \"types\" : [ \"country\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"2009\",\n            \"short_name\" : \"2009\",\n            \"types\" : [ \"postal_code\" ]\n         }\n      ],\n      \"adr_address\" : \"5, \\u003cspan class=\\\"street-address\\\"\\u003e48 Pirrama Rd\\u003c/span\\u003e, \\u003cspan class=\\\"locality\\\"\\u003ePyrmont\\u003c/span\\u003e \\u003cspan class=\\\"region\\\"\\u003eNSW\\u003c/span\\u003e \\u003cspan class=\\\"postal-code\\\"\\u003e2009\\u003c/span\\u003e, \\u003cspan class=\\\"country-name\\\"\\u003eAustralia\\u003c/span\\u003e\",\n      \"formatted_address\" : \"5, 48 Pirrama Rd, Pyrmont NSW 2009, Australia\",\n      \"formatted_phone_number\" : \"(02) 9374 4000\",\n      \"geometry\" : {\n         \"location\" : {\n            \"lat\" : -33.866651,\n            \"lng\" : 151.195827\n         },\n         \"viewport\" : {\n            \"northeast\" : {\n               \"lat\" : -33.8653881697085,\n               \"lng\" : 151.1969739802915\n            },\n            \"southwest\" : {\n               \"lat\" : -33.86808613029149,\n               \"lng\" : 151.1942760197085\n            }\n         }\n      },\n      \"icon\" : \"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png\",\n      \"id\" : \"4f89212bf76dde31f092cfc14d7506555d85b5c7\",\n      \"international_phone_number\" : \"+61 2 9374 4000\",\n      \"name\" : \"Google\",\n      \"opening_hours\" : {\n         \"exceptional_date\" : [],\n         \"open_now\" : false,\n         \"periods\" : [\n            {\n               \"close\" : {\n                  \"day\" : 1,\n                  \"time\" : \"1800\"\n               },\n               \"open\" : {\n                  \"day\" : 1,\n                  \"time\" : \"0800\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 2,\n                  \"time\" : \"1800\"\n               },\n               \"open\" : {\n                  \"day\" : 2,\n                  \"time\" : \"0800\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 3,\n                  \"time\" : \"1800\"\n               },\n               \"open\" : {\n                  \"day\" : 3,\n                  \"time\" : \"0800\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 4,\n                  \"time\" : \"1800\"\n               },\n               \"open\" : {\n                  \"day\" : 4,\n                  \"time\" : \"0800\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 5,\n                  \"time\" : \"1800\"\n               },\n               \"open\" : {\n                  \"day\" : 5,\n                  \"time\" : \"0800\"\n               }\n            }\n         ],\n         \"weekday_text\" : [\n            \"Monday: 8:00 AM – 6:00 PM\",\n            \"Tuesday: 8:00 AM – 6:00 PM\",\n            \"Wednesday: 8:00 AM – 6:00 PM\",\n            \"Thursday: 8:00 AM – 6:00 PM\",\n            \"Friday: 8:00 AM – 6:00 PM\",\n            \"Saturday: Closed\",\n            \"Sunday: Closed\"\n         ]\n      },\n      \"photos\" : [\n         {\n            \"height\" : 1365,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/105932078588305868215/photos\\\"\\u003eMaksym Kozlenko\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBcwAAAFbHFl6Io4CPjrEH_o8ety3zWhPH--GoVkB2czT3rddmSw9hZPWrvZUgttMhTWD0nNK3Olvadn2ZuKWCa3Drih4jlfqVotcbuh-ooMP2C39Uzle_qh8KwVkUHVgFgC83TYP2_OTfO5oftHwA_4YHU3mu97GSJSt0_Oe8eqdYN7slEhCkPYhmIfcHvcHY93VWVhyYGhTs6o67vWwrSIFqm4c6Aq_7GBdR9w\",\n            \"width\" : 2048\n         },\n         {\n            \"height\" : 900,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/114853289796780923190/photos\\\"\\u003eShir Yehoshua\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAHKmq7vOywIIgezjduF9JwyXIkz9-uDXflwaUKRqOswUTfqjCGoVrFZO09UPsP11jJnr3QaW3j3tv6CslBbFAVA5ppocF-lgiUmmNldFVaKYJz_M7BreOewlAoUECYGs03vXxT0ReP55OQRd2GqUOBw7R0eUP_ornh1b0yOfz-wtEhDKrLVfPC3iFJpJ2zWcscIQGhR5BcbHeiJtcOpubkF8g6JM5oMPrg\",\n            \"width\" : 1600\n         },\n         {\n            \"height\" : 3264,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/102493344958625549078/photos\\\"\\u003eThomas Li\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAADw-SSRVuqKl5lBYw0EX7RSPGPgaChAN8TcpN5LOkS6naIFBzI57E3-EdPRD5muVaolofx_VSygFFvqzomEqYNaNYjfkL9irIeDSbsnKHv1Cc6BSPUQaYaW4CWYfz_0bJ3wL-O6R1sQ0Sdd2s4HUXRdkhDLbCa_RRV6nMMv6cY7TEhAp2pDNSmLhL_AQU8afCstJGhQpWqARVHV5LmlL4eJ3688PEWijlA\",\n            \"width\" : 4912\n         },\n         {\n            \"height\" : 1184,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/106645265231048995466/photos\\\"\\u003eMalik Ahamed\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAE0jr7lM-8xfLhbHJMaUMAyfQecEHtI4Z6Icg-DnmNOpvvRLARRxwFK0MxP9EWaLoTPW9nLLZjhZv4AH8iE87Enp9BnEIVarlJyQBc2noe7SBh0vmJzGJH6agXNIK1GdUTBkFuB_oEWivbtFktuaZyRtXLh5ibiXvSM_AaG3Bp2bEhB79HSjy39El9NNX1o-p3vPGhRiw8Ti3vdWxyYWqYn3b69ticNoyA\",\n            \"width\" : 1776\n         },\n         {\n            \"height\" : 2448,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/116976377324210679577/photos\\\"\\u003eWH CHEN\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAPLo26CZcR25wSIDj5TwZz_J5qH7dHebTgG14crEepUhcYdTLhZbp39lCegiZCqmow7cC5xLMKpWLDNR39b58xTfnlp5nM3ZGWtrsXxYaIq3dbNrQDmPz6L5DHHPswDDNP3xBbgjSt1VsFzcn8vgoGm_X0FHtbwierGGfjgJ8UXLEhDHCa9Hj6TzZGQatrrWI-G-GhRIxlGtPE_dCDk_4oWLnKb1oCes6w\",\n            \"width\" : 3264\n         },\n         {\n            \"height\" : 5582,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/110754641211532656340/photos\\\"\\u003eRobert Koch\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAKYcTpHXJ7fgUmaMo71haCw1V37z_ShgahT5KiuqDVPmjIDKstXhhTmlGtSWl-JzcpNqXAYTxtp_iv5-wQdV_DrUYhFG6MMWFIU_IqjZ_Y0C_sJY7RfV2l0-jHnwnL1JcDx8_h4SoqwD2Rq64LfeD_0Qp1fpNvgtPv-LNmnuYnAxEhDb9ZJpHYQr1suk-32iaJ1PGhQB4-cW-pUkeayPq6TZ7DzgrxyExQ\",\n            \"width\" : 2866\n         },\n         {\n            \"height\" : 1184,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/106645265231048995466/photos\\\"\\u003eMalik Ahamed\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAPiS6rwBNXgHXi22sEKtw2OIsO0quCZssqXdmPIq_UJMJmNNUr7yHqyUay403YGZXg6Jaz1bY7Ovk9EukVAiChKU3ERRZ6OKay0qwhhW80qZO6nXv2O3H_loYrn2HCaaxceUjM-ksy8oaaD_U-tjIuG243lQZ3g7_NCoYgy64W75EhC73qgmWCAmji-IEI2NEzwEGhTpDidML3UHNonpsaDQShtkKmP3Aw\",\n            \"width\" : 1776\n         },\n         {\n            \"height\" : 4032,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/102558609090086310801/photos\\\"\\u003eHuy Tran\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAALm6Zpwnx1dQU8rcTWV8l0pyspKIQ2P_sKGtYLAyswdepELpbTCvEITVfBbhoY_yvVzwZjvWif96mP2suPpLTdJ_ntVd5hfXiIzMqlmf9qIoqxABBFhRNeHHVj_pOXYZAg2zbx91JpAMyP1CF3v91rJxi-d39EUAfwwy8aIRwjNkEhATfm5FeOCD1C3azLYhgeNaGhSSjwKRGhCrxWS4mYJY_eufe8va8g\",\n            \"width\" : 3024\n         },\n         {\n            \"height\" : 4032,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/114399903150862849931/photos\\\"\\u003eMakiko Nakamoto\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAALSxX_0iOWZgQ-f0jLmJAewDTPY8OuZX6PtDmGDE4equ-BWC2qiMrNZt-4Rql22cNzm4ZFdGDOEzH_jonpIZwsfiRipLHJLf1O5wda91INQnt8H32fSQI_RYr8gi5U42uc36kdorCizcMwqjQY04C9pgQeh4NMxjf3iAkEVcYZXYEhCKozcn1S0rjlCXQjYcbHSUGhTP2_8Cf4OmdimMPC4ZiTDCK-2cGw\",\n            \"width\" : 3024\n         },\n         {\n            \"height\" : 1944,\n            \"html_attributions\" : [\n               \"\\u003ca href=\\\"https://maps.google.com/maps/contrib/115237891004485589752/photos\\\"\\u003eKatherine Howell\\u003c/a\\u003e\"\n            ],\n            \"photo_reference\" : \"CoQBdwAAAID4-FWkrayCFdP1vAL9Zm5HCISXrHEdF3UHMvip_fo1UAHkqRajmS-1dStcofzI5crZ2rVqi7bw5lLGLfVudD8AaMHsA0k7peRNAgzQrizD_5Lj4YZ3n1kEO8kCSIhFSadhRH958joRKeGhFfSva8KcKTzaxvEZzKhQZWbQublBEhAtauIgWLOLWFncPJKWP6YNGhS2VfNHDASOcBYYUjuE3f-bUjlW6g\",\n            \"width\" : 1944\n         }\n      ],\n      \"place_id\" : \"ChIJN1t_tDeuEmsRUsoyG83frY4\",\n      \"rating\" : 4.6,\n      \"reference\" : \"CmRSAAAAZLg3CFs2PaI4dvLIl20jZF9QWbUxduJzo5nMYx7SmtsV-ywzwAK_M7ibSTRQ5wiMUI7B4U6sJghWX-M3bBWovKXFkHO8zANZXBaou0X8hkCowZjNW3Z-yZ77XGz_kzqXEhCvj3iycVZDvfTdUbn6S8tdGhTdmiE-KzIi-GEXlSPZibcghjxPfg\",\n      \"reviews\" : [\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 0,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"Ranjit Nair\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/102808647017735332248/reviews\",\n            \"language\" : \"en\",\n            \"profile_photo_url\" : \"//lh4.googleusercontent.com/-A-UJAO1hMtk/AAAAAAAAAAI/AAAAAAAAAAA/AAomvV2-ATwMZVutpGVaWkdSaPNYqxj10Q/s128/photo.jpg\",\n            \"rating\" : 1,\n            \"relative_time_description\" : \"3 weeks ago\",\n            \"text\" : \"Absolutely ZERO support. There is no thought behind how the whole Google Business Review process works and the only answer you get from support staff is that they are only trained to direct people to the Google support page. Why do you need people at the end of a phone line to tell you that?\\n\\nAs it stands, there is nothing stopping me from standing in front of a store and giving a negative review to a business based on whether it was raining that day or not. There is no process here to verify if the claim of the user is right or not. I thought the whole process of reviews were meant to be a fair representation of the service the business provides. Where is the fairness here?\\n\\nGoogle encourages businesses to respond to people's reviews. Is Google responding to the reviews that are posted about their business? Why the double standards Google?\",\n            \"time\" : 1485900942\n         },\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 3,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"Justine OBRIEN\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/104177669626132953795/reviews\",\n            \"language\" : \"en\",\n            \"profile_photo_url\" : \"//lh6.googleusercontent.com/-s6AzNe5Qcco/AAAAAAAAAAI/AAAAAAAB2wA/4w1qvuH0noI/s128/photo.jpg\",\n            \"rating\" : 5,\n            \"relative_time_description\" : \"5 months ago\",\n            \"text\" : \"Fabulous location. Wonderful warm welcoming reception. Excellent unique living Google wall entry. Sensational helpful kind people. Easy fast efficient help online plus with appointment on site. Super company always progressive plus innovative products and services for all businesses. Go Google Australia. Shine on! \",\n            \"time\" : 1474966415\n         },\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 0,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"Dean Hansen\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/113582807432261503598/reviews\",\n            \"language\" : \"en\",\n            \"profile_photo_url\" : \"//lh3.googleusercontent.com/-DKy97mUZivQ/AAAAAAAAAAI/AAAAAAAAAAA/AAomvV2ROXdPUGZLrqMkb4aszS3KjQWhfw/s128/photo.jpg\",\n            \"rating\" : 1,\n            \"relative_time_description\" : \"4 months ago\",\n            \"text\" : \"Well i am just trying to get on to google my business, and wow do you think its easy, Oh no google want me to video verify my business and do you think they will call, not on your life. So i call up google Sydney and the receptionist is trained to say oh no we don't handle anything like that sir and no we don't know of any numbers you can call so you can get it sorted out, there is only the online service that is all. So they come to our country want a presence, won't take responsibility for their works, want us to treat them fairly etc, off hand taking care of our businesses to some English as a second language speaking people, and thinks that will be enough. Quiet willing to take your money but give you nothing in return. and i only put a star in cause im forced to so i can post this complaint, You suck GOOGLE.\",\n            \"time\" : 1476064941\n         },\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 3,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"Matthew Jackson\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/106355320501198330374/reviews\",\n            \"language\" : \"en\",\n            \"profile_photo_url\" : \"//lh5.googleusercontent.com/-9trUS-wRvlc/AAAAAAAAAAI/AAAAAAAAH6Q/d2QujRI7MDo/s128/photo.jpg\",\n            \"rating\" : 5,\n            \"relative_time_description\" : \"2 months ago\",\n            \"text\" : \"Great office and views. Food is great and the staff seem to be treated really well. Reception is friendly and it is always a pleasure to have meetings there.\",\n            \"time\" : 1482146105\n         },\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 0,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"Robin Paterson\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/111929987336872027856/reviews\",\n            \"language\" : \"en\",\n            \"profile_photo_url\" : \"//lh4.googleusercontent.com/--fV37mOiPsA/AAAAAAAAAAI/AAAAAAAAC_0/9W6z_-0naew/s128/photo.jpg\",\n            \"rating\" : 1,\n            \"relative_time_description\" : \"a week ago\",\n            \"text\" : \"ChuppachuppChap,mangled Marshmellow fellow with a Nougat No You Get attitude. \\nHelpline? Support and service? Australia? \\nThis is no joke. But I'm a considerate guy. I enjoy tech companies who don't display tech.\\nThere's admiration for a company whom business is a front set up to devalue hardworking employees which represent Google across the planet.\\nHey Why so Serious? Because your job IS in jeopardy.\\nHa! Who am I to say. Another Day.\\nLook at the Moon pepperoni and cheese? Hmm not to healthy. Saturns rings? Look closer.\\nLOL.\\nRemember the telephone with intelligent People that use it? \\nAnswerinig it may be of interest. If not I'd suggest binning all phone lines.\\nUse what you have, honor what you use.\",\n            \"time\" : 1486958195\n         }\n      ],\n      \"scope\" : \"GOOGLE\",\n      \"types\" : [ \"point_of_interest\", \"establishment\" ],\n      \"url\" : \"https://maps.google.com/?cid=10281119596374313554\",\n      \"utc_offset\" : 660,\n      \"vicinity\" : \"5, 48 Pirrama Road, Pyrmont\",\n      \"website\" : \"https://www.google.com.au/about/careers/locations/sydney/\"\n   },\n   \"status\" : \"OK\"\n}\n"
+				},
+				{
+					"id": "896d3e49-66d5-42ba-8c21-fb4d1a446fb3",
+					"name": "Daft Media",
+					"originalRequest": {
+						"url": "{{url}}/{{sub}}/json?placeid={{placeid_DM}}&key={{api}}",
+						"method": "GET",
+						"header": [],
+						"body": {}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Alt-Svc",
+							"value": "quic=\":443\"; ma=2592000; v=\"35,34\"",
+							"name": "Alt-Svc",
+							"description": "Custom header"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "public, max-age=300",
+							"name": "Cache-Control",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip",
+							"name": "Content-Encoding",
+							"description": "The type of encoding used on the data."
+						},
+						{
+							"key": "Content-Length",
+							"value": "1463",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Feb 2017 10:46:54 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 25 Feb 2017 10:51:54 GMT",
+							"name": "Expires",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"key": "Server",
+							"value": "pablo",
+							"name": "Server",
+							"description": "A name for the server"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Language",
+							"name": "Vary",
+							"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN",
+							"name": "X-Frame-Options",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block",
+							"name": "X-XSS-Protection",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [],
+					"responseTime": 129,
+					"body": "{\n   \"html_attributions\" : [],\n   \"result\" : {\n      \"address_components\" : [\n         {\n            \"long_name\" : \"Latin Hall\",\n            \"short_name\" : \"Latin Hall\",\n            \"types\" : [ \"subpremise\" ]\n         },\n         {\n            \"long_name\" : \"Golden Lane\",\n            \"short_name\" : \"Golden Ln\",\n            \"types\" : [ \"route\" ]\n         },\n         {\n            \"long_name\" : \"Dublin\",\n            \"short_name\" : \"Dublin\",\n            \"types\" : [ \"locality\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"Dublin 8\",\n            \"short_name\" : \"Dublin 8\",\n            \"types\" : [ \"postal_town\" ]\n         },\n         {\n            \"long_name\" : \"Dublin City\",\n            \"short_name\" : \"Dublin City\",\n            \"types\" : [ \"administrative_area_level_2\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"County Dublin\",\n            \"short_name\" : \"County Dublin\",\n            \"types\" : [ \"administrative_area_level_1\", \"political\" ]\n         },\n         {\n            \"long_name\" : \"Ireland\",\n            \"short_name\" : \"IE\",\n            \"types\" : [ \"country\", \"political\" ]\n         }\n      ],\n      \"adr_address\" : \"Latin Hall, \\u003cspan class=\\\"street-address\\\"\\u003eGolden Ln\\u003c/span\\u003e, \\u003cspan class=\\\"locality\\\"\\u003eDublin 8\\u003c/span\\u003e, \\u003cspan class=\\\"country-name\\\"\\u003eIreland\\u003c/span\\u003e\",\n      \"formatted_address\" : \"Latin Hall, Golden Ln, Dublin 8, Ireland\",\n      \"formatted_phone_number\" : \"1580 880 880\",\n      \"geometry\" : {\n         \"location\" : {\n            \"lat\" : 53.3410009,\n            \"lng\" : -6.267296\n         },\n         \"viewport\" : {\n            \"northeast\" : {\n               \"lat\" : 53.3422506302915,\n               \"lng\" : -6.266205969708499\n            },\n            \"southwest\" : {\n               \"lat\" : 53.3395526697085,\n               \"lng\" : -6.268903930291502\n            }\n         }\n      },\n      \"icon\" : \"https://maps.gstatic.com/mapfiles/place_api/icons/generic_business-71.png\",\n      \"id\" : \"79bb6f13ff7829b6d5ab5f700d1754d6b0ea90ee\",\n      \"international_phone_number\" : \"+353 1580 880 880\",\n      \"name\" : \"Daft Media Limited\",\n      \"opening_hours\" : {\n         \"exceptional_date\" : [],\n         \"open_now\" : false,\n         \"periods\" : [\n            {\n               \"close\" : {\n                  \"day\" : 1,\n                  \"time\" : \"1700\"\n               },\n               \"open\" : {\n                  \"day\" : 1,\n                  \"time\" : \"0900\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 2,\n                  \"time\" : \"1700\"\n               },\n               \"open\" : {\n                  \"day\" : 2,\n                  \"time\" : \"0900\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 3,\n                  \"time\" : \"1700\"\n               },\n               \"open\" : {\n                  \"day\" : 3,\n                  \"time\" : \"0900\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 4,\n                  \"time\" : \"1700\"\n               },\n               \"open\" : {\n                  \"day\" : 4,\n                  \"time\" : \"0900\"\n               }\n            },\n            {\n               \"close\" : {\n                  \"day\" : 5,\n                  \"time\" : \"1700\"\n               },\n               \"open\" : {\n                  \"day\" : 5,\n                  \"time\" : \"0900\"\n               }\n            }\n         ],\n         \"weekday_text\" : [\n            \"Monday: 9:00 AM – 5:00 PM\",\n            \"Tuesday: 9:00 AM – 5:00 PM\",\n            \"Wednesday: 9:00 AM – 5:00 PM\",\n            \"Thursday: 9:00 AM – 5:00 PM\",\n            \"Friday: 9:00 AM – 5:00 PM\",\n            \"Saturday: Closed\",\n            \"Sunday: Closed\"\n         ]\n      },\n      \"place_id\" : \"ChIJP21xjzoMZ0gRCx5wtxaPWPI\",\n      \"rating\" : 5,\n      \"reference\" : \"CmRSAAAApvS1AEvowYGG3o0rMpP_dG65ibmdTIUcS6WHetxmf7sN6hjxR8jTawdgy2pjOuPwcIU7qUUfLH9aX8SZ2lALTfG4tOTukg_0x4NHfW1j5XJ5m8P7EmxpP1s50K-2pLYkEhDabLGVLnjSBiwpDLv6bUsCGhROc7QWkIv8NL8O1urxX7l1LXsXiQ\",\n      \"reviews\" : [\n         {\n            \"aspects\" : [\n               {\n                  \"rating\" : 3,\n                  \"type\" : \"overall\"\n               }\n            ],\n            \"author_name\" : \"mejri hamza\",\n            \"author_url\" : \"https://www.google.com/maps/contrib/109088725658599404420/reviews\",\n            \"language\" : \"fr\",\n            \"profile_photo_url\" : \"//lh5.googleusercontent.com/-j860wV_ZLvg/AAAAAAAAAAI/AAAAAAAAAAA/AAomvV2_CfD0r39eKbY7IbDYnBjj5xZsCQ/s128/photo.jpg\",\n            \"rating\" : 5,\n            \"relative_time_description\" : \"8 months ago\",\n            \"text\" : \"\",\n            \"time\" : 1464728560\n         }\n      ],\n      \"scope\" : \"GOOGLE\",\n      \"types\" : [ \"point_of_interest\", \"establishment\" ],\n      \"url\" : \"https://maps.google.com/?cid=17462864882858728971\",\n      \"utc_offset\" : 0,\n      \"vicinity\" : \"Latin Hall, Golden Lane, Dublin 8\",\n      \"website\" : \"http://daft.ie/\"\n   },\n   \"status\" : \"OK\"\n}\n"
+				}
+			]
+		},
+		{
+			"name": "Invalid API Key - Get Place Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status message is fine!\"] = jsonData.status === \"REQUEST_DENIED\";",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Error message is  fine, too!\"] = jsonData.error_message === \"The provided API key is invalid.\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub}}/json?placeid={{placeid}}&key={{invalid_api}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "No API Key - Get Place Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Error Msg\"] = jsonData.error_message === \"This service requires an API key.\";",
+							"",
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Status Message\"] = jsonData.status === \"REQUEST_DENIED\";"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{url}}/{{sub}}/json?placeid={{placeid}}",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
