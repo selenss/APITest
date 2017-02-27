@@ -24,9 +24,12 @@ public class APIObjects {
 	public String type = "restaurant";
 	
 	//For Place Add/Delete Test Cases
-	public String placeAddURL = "https://maps.googleapis.com/maps/api/place/add/xml?";
-	public String placeDeleteURL = "https://maps.googleapis.com/maps/api/place/delete/xml?";
-	public String validPOSTRequestBodyAdd = 
+	public String placeAddURL = "https://maps.googleapis.com/maps/api/place/add/json?";
+	public String placeDeleteURL = "https://maps.googleapis.com/maps/api/place/delete/json?";
+	public String validPOSTRequestBodyAdd = "{ \"location\": {\"lat\": -33.8669710,\"lng\": 151.1958750},\"accuracy\": 50,\"name\": \"Google Shoes!\",\"phone_number\": \"(02) 9374 4000\", \"address\": \"48 Pirrama Road, Pyrmont, NSW 2009, Australia\", \"types\": [\"shoe_store\"], \"website\": \"http://www.google.com.au/\",  \"language\": \"en-AU\"}";
+	public String validPOSTDeleteBodyAdd_01 =	"{\"place_id\":\"";
+	public String validPOSTDeleteBodyAdd_02 =	"\"}";		
+			/*
 			"<PlaceAddRequest>  "
 			+ "<location>    <lat>-33.8669710</lat>    <lng>151.1958750</lng>  </location>  "
 			+ "<accuracy>50</accuracy>  "
@@ -35,7 +38,7 @@ public class APIObjects {
 			+ "<address>48 Pirrama Road, Pyrmont, NSW 2009, Australia</address>  "
 			+ "<type>shoe_store</type>  "
 			+ "<website>http://www.google.com.au/</website>  "
-			+ "<language>en-AU</language></PlaceAddRequest>";
+			+ "<language>en-AU</language></PlaceAddRequest>";*/
 	
 	
 	

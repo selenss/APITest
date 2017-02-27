@@ -6,7 +6,6 @@
       <class name="google.api.test.PlaceAddDelete">
         <methods>
           <include name="successfulPOSTRequestDelete"/>
-          <include name="successfulPOSTRequestAdd"/>
           <include name="alreadyDeletedPOSTRequestDelete"/>
         </methods>
       </class> <!-- google.api.test.PlaceAddDelete -->

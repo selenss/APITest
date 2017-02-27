@@ -17,7 +17,7 @@ public class PlaceDetails extends APIObjects {
     .then()
         .statusCode(200)
         .body("status", equalTo("OK"))
-        .body("result.name", equalTo("Daft Media Ltd"));
+        .body("result.name", equalTo("Daft Media Limited"));
 	}
 	
 	@Test
